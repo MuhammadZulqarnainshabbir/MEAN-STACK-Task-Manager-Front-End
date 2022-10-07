@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h2 style="color: black;">Task List form</h2>
+            <div class="mb-3">
+                <label style="color: black;" for="tasklist" class="form-label">Task List Title</label>
+                <input #taskListInput type="text" class="form-control" id="tasklist" placeholder="title">
+                <br>
+                <button type="button" class="btn btn-dark" (click)="addNewTaskList(taskListInput.value)">Submit</button>
+                <button type="button" style="margin-left: 3%;" routerLink="/" class="btn btn-danger">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

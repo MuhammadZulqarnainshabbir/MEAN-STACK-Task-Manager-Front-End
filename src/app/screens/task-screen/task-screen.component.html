@@ -1,0 +1,44 @@
+<div class="container mt-4 ">
+    <h2 class="bg-dark p-3 fw-bold text-center">Task Manager</h2>
+    <div class="row">
+
+        <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success float-start" routerLink="/new-task-list">New Task
+                        List</button>
+                </div>
+            </div>
+            <p class=" fw-bold" style="color: black">Task List Name </p>
+            <div class="list-group">
+                <a [routerLink]="['/task-list', item._id]" *ngFor="let item of  tasklist"
+                    class="list-group-item list-group-item-action" routerLinkActive="active" aria-current="true">
+                    {{item.title}}
+                    <span (click)="deleteTaskList(item)" class="badge bg-danger rounded-pill">X</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success float-start" (click)="addnewtask()">New Task</button>
+                </div>
+
+            </div>
+            <p style="color: black; font-weight: bold;">Tasks Inside List</p>
+            <ol class="list-group list-group-numbered">
+                <li [class.mark-completed]="task.completed==true" style="cursor:pointer" *ngFor="let task of tasks"
+                    (click)="taskClicked(task)" class="list-group-item">
+                    {{task.title}}
+                    <button (click)="deletetask(task)" class="badge bg-danger rounded-pill">X</button>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+
+</div>
